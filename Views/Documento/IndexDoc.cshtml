@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DocumentosModel>
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <h1>Documentos</h1>
+        <a class="btn btn-primary mx-2" asp-controller="Documento" asp-action="CadastrarDoc">Cadastrar Novo Documento</a>
+    </div>
+
+    @if(TempData["MenssagemSucesso"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert arial-label="Close">X</button>
+            Solicitação concluída com sucesso!
+        </div>
+    }
+
+    @if (TempData["MenssagemErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert arial-label="Close">X</button>
+            Ops! Algo deu errado. Tente novamente.
+        </div>
+    }
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Conteúdo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @if (Model != null)
+        {
+
+            @foreach(var documento in Model)
+            {
+                <tr>
+                    <th scope="row">@documento.Modulo</th>
+                    <td>@documento.Conteudo</td>
+                    <td>
+                        <a asp-controller="Documento" asp-action="EditarDoc" asp-route-id="@documento.Id" class="btn btn-outline-primary mx-2">Editar</a>
+                        <a asp-controller="Documento" asp-action="ExcluirDoc" asp-route-id="@documento.Id" class="btn btn-danger mx-2">Excluir</a>
+
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>
+</div>

@@ -1,0 +1,23 @@
+﻿@model UsuarioModel
+@{
+    ViewData["title"] = "Excluir Usuário";
+}
+
+
+<div class="container p-5 rounded-5">
+
+    <div class="mb-5 text-center">
+        <h1>Excluir Usuário</h1>
+    </div>
+
+    <form method="post" asp-controller="Usuario" asp-action="ExcluirUser">
+        <input type="hidden" asp-for="Id" />
+        <br />
+        <h2>Tem certeza que deseja excluir esse usuário?</h2>
+        <br />
+        <div class="d-flex gap-5 mt-5">
+            <a class="btn btn-primary w-50" asp-asp-controller="Usuario" asp-action="IndexUser">Voltar</a>
+            <button type="submit" class="btn btn-danger w-50">Excluir</button>
+        </div>
+    </form>
+</div>

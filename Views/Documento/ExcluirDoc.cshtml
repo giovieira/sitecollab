@@ -1,0 +1,23 @@
+﻿@model DocumentosModel
+@{
+    ViewData["title"] = "Excluir Documento";
+}
+
+
+<div class="container p-5 rounded-5">
+
+    <div class="mb-5 text-center">
+        <h1>Excluir Documentos</h1>
+    </div>
+
+    <form method="post" asp-controller="Documento" asp-action="ExcluirDoc">
+        <input type="hidden" asp-for="Id" />
+        <br />
+        <h2>Tem certeza que deseja excluir esse documento?</h2>
+        <br />
+        <div class="d-flex gap-5 mt-5">
+            <a class="btn btn-primary w-50" asp-asp-controller="Documento" asp-action="IndexDoc">Voltar</a>
+            <button type="submit" class="btn btn-danger w-50">Excluir</button>
+        </div>
+    </form>
+</div>

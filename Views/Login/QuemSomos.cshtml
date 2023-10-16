@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "_LayoutDeslogada";
+}
+@{
+    ViewData["Title"] = "Quem Somos Nós";
+}
+
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .text-container {
+        width: 50%;
+    }
+
+    .image-container {
+        width: 50%;
+        text-align: right;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
+<h1 class="display-4">@ViewData["Title"]</h1>
+
+<div class="container">
+    <div class="text-container">
+        <p>
+            Bem-vindo ao CollabBridge, onde a colaboração encontra um novo significado e os desafios da era moderna são transformados em oportunidades inspiradoras.
+            Emergindo no cenário dinâmico pós-COVID-19, reconhecemos a necessidade de redefinir a maneira como as empresas operam, comunicam-se e prosperam. Viemos revolucionar a maneira como as empresas lidam com a colaboração e com a gestão em um mundo de constante evolução.
+            Construímos uma plataforma para gestão empresarial que não apenas aborda os desafios do trabalho remoto, mas também transforma esses desafios em oportunidades. Com uma visão de excelência, apresentamos soluções concretas para os problemas que ameaçam a eficiência e a inovação da sua empresa.
+        </p>
+    </div>
+    <div class="image-container">
+        <img src="/img/img.png" alt="Imagem" />
+    </div>
+</div>
